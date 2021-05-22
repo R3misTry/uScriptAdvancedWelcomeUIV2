@@ -1,0 +1,29 @@
+/*
+	Script Name: AdvancedWelcomeUI V2
+	Version: 2.0.0
+	Description: Advanced welcome ui with discord button
+	Created By: R3misTry
+*/
+
+Title = "Its'a Title!";
+Comment = "Editable AdvancedWelcomeUI V2 its awesome!!";
+discordinvitemessage = "Discord sunucusuna katıl.";
+discordinvitelink = "https://discord.gg/czCZFQvEcD";
+
+event onPlayerJoined(player,key){
+    player.effects.sendUI(22133, 22, Title, Comment);
+    player.effects.showCursor();
+}
+
+event onEffectButtonClicked(player,key){
+    if(key == "Discord_Button"){
+        player.browserRequest(discordinvitemessage, discordinvitelink);
+    }
+}
+
+event onEffectButtonClicked(player,key){
+    if(key == "Close_Button"){
+        player.effects.clearUIById(22133);
+        player.effects.hideCursor();
+    }
+}
